@@ -1,0 +1,154 @@
+.manage-leaves-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+}
+
+.manage-leaves-title {
+  color: #2563eb;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.bulk-btns {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.bulk-btns button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bulk-btns button:disabled {
+  background: #b3c6f7;
+  cursor: not-allowed;
+}
+
+.leave-card {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.leave-checkbox {
+  margin-right: 14px;
+  transform: scale(1.2);
+}
+
+.leave-username {
+  color: #2563eb;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.leave-info {
+  flex: 1;
+  color: #444;
+  font-size: 1rem;
+}
+
+.leave-status {
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0.2em 0.7em;
+  border-radius: 6px;
+  background: #e0e7ff;
+  color: #2563eb;
+  font-size: 0.98em;
+}
+
+.leave-status.approved {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.leave-status.rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.leave-status.pending {
+  background: #fef9c3;
+  color: #b45309;
+}
+
+.leave-actions button {
+  margin-right: 7px;
+  padding: 0.3rem 0.9rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.leave-actions .approve-btn {
+  background: #22c55e;
+}
+
+.leave-actions .reject-btn {
+  background: #ef4444;
+}
+
+.leaves-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.leaves-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.leaves-table th, .leaves-table td {
+  padding: 0.75rem 0.7rem;
+  text-align: left;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1rem;
+}
+
+.leaves-table th {
+  background: #f3f6fa;
+  color: #2563eb;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.leaves-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .manage-leaves-container {
+    padding: 1rem 0.5rem;
+  }
+  .leaves-table th, .leaves-table td {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.3rem;
+  }
+}

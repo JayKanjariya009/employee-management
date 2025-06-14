@@ -1,0 +1,482 @@
+/* Modern Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.logo-icon {
+  font-size: 1.4rem;
+  margin-right: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.sidebar h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Top Right Panel */
+.top-right-panel {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* User Info in Top-Right Corner */
+.user-info-corner {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.user-info-corner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar-corner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 12px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.user-details-corner {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name-corner {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 2px;
+}
+
+.user-role-corner {
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Logout Button in Top-Right Corner */
+.logout-btn-corner {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.logout-btn-corner:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.logout-btn-corner:active {
+  transform: translateY(0);
+}
+
+.logout-icon {
+  font-size: 1.1rem;
+  margin-right: 8px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.logout-text {
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-right: 15px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: hidden;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-section {
+  margin: 8px 0 4px 0;
+}
+
+.nav-section:first-child {
+  margin-top: 4px;
+}
+
+.section-title {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.nav-item {
+  margin-bottom: 1px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  transform: translateX(5px);
+}
+
+.nav-link.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-right: 4px solid #ff6b6b;
+  font-weight: 600;
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #ff6b6b;
+  border-radius: 0 5px 5px 0;
+}
+
+.nav-icon {
+  font-size: 1rem;
+  margin-right: 10px;
+  width: 18px;
+  text-align: center;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.nav-text {
+  font-weight: inherit;
+}
+
+
+
+/* Toggle Button */
+.toggle-btn {
+  display: none;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 1001;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  width: 55px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 3px;
+  background-color: white;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+/* Content Area */
+.content {
+  margin-left: 250px;
+  padding: 40px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .toggle-btn {
+    display: flex !important;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 90px 20px 20px 20px;
+  }
+
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .top-right-panel {
+    top: 80px;
+    right: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-info-corner {
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
+
+  .user-avatar-corner {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+
+  .user-name-corner {
+    font-size: 0.85rem;
+  }
+
+  .user-role-corner {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .logout-btn-corner {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .logout-text {
+    display: none;
+  }
+
+  .logout-icon {
+    margin-right: 0;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+  
+  .content {
+    padding: 90px 15px 20px 15px;
+  }
+
+  .top-right-panel {
+    top: 75px;
+    right: 15px;
+    gap: 8px;
+  }
+
+  .user-info-corner {
+    padding: 8px 12px;
+  }
+
+  .user-avatar-corner {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+    margin-right: 8px;
+  }
+
+  .user-name-corner {
+    font-size: 0.8rem;
+  }
+
+  .user-role-corner {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .logout-btn-corner {
+    padding: 8px 12px;
+  }
+
+  .logout-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Scrollbar - Hidden since overflow is now hidden */
+.sidebar-nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.logout-btn-corner:focus,
+.toggle-btn:focus,
+.user-info-corner:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}

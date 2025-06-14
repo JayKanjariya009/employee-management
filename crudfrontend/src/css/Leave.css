@@ -1,0 +1,68 @@
+.leave-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+}
+
+.leave-title {
+  color: #2563eb;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.leave-list {
+  list-style: none;
+  padding: 0;
+}
+
+.leave-item {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.leave-type {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.leave-reason {
+  color: #444;
+  font-size: 1rem;
+}
+
+.leave-status {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+  background: #4f8cff;
+  border-radius: 5px;
+  padding: 0.2rem 0.7rem;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 0.3rem;
+}
+
+.leave-status.approved {
+  background: #22c55e;
+}
+
+.leave-status.rejected {
+  background: #ef4444;
+}
+
+.leave-status.pending {
+  background: #f59e42;
+  color: #fff;
+}

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #343a40;
+  padding: 25px 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.sidebar h4 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+.sidebar .nav-link {
+  font-size: 0.85rem;
+  color: #ccc;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+}
+
+.sidebar .nav-link:hover {
+  color: #fff;
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.sidebar .nav-item {
+  margin-bottom: 12px;
+}
+
+/* Content Styling */
+.content {
+  flex: 1;
+  padding: 40px;
+  background-color: #eef2f7;
+}
+
+.form-container {
+  width: 90%;
+  margin: auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #444;
+}
+
+.form-control {
+  font-size: 0.95rem;
+}
+
+.btn-success {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+}
+
+/* Toggle Button Styling */
+.toggle-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .toggle-btn {
+    display: block;
+  }
+
+  .content {
+    padding: 80px 20px 20px 20px;
+  }
+}
