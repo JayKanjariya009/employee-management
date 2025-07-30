@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import "../sidebar.css";
+import "../styles/sidebar.css";
 
 function Sidebar() {
   const [sidebarActive, setSidebarActive] = useState(false);

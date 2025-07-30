@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import Sidebar from '../Common/Sidebar'
-import "../css/leaverequest.css"
+// CSS is imported globally in index.js
 
 function LeaveRequest() {
     const [form, setForm] = useState({ reason: '', leaveType: 'paid' })

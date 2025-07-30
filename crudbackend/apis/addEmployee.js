@@ -31,7 +31,7 @@ const addEmployee = async (req, res) => {
             });
         }
 
-        res.status(201).json({
+        return res.status(201).json({
             success: true,
             message: "Data inserted successfully.",
             data: Employee

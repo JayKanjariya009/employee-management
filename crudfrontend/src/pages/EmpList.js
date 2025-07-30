@@ -4,7 +4,7 @@ import Sidebar from "../Common/Sidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import "../css/Emplist.css"; 
+// CSS is imported globally in index.js 
 
 function EmpList() {
   const [employees, setEmployees] = useState([]);

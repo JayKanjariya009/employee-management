@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../css/Leave.css'; // <-- Import the new CSS
+// CSS is imported globally in index.js
 import Sidebar from '../Common/Sidebar';
 
 function Leave() {

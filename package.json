@@ -1,0 +1,34 @@
+{
+  "name": "employee-management-system",
+  "version": "1.0.0",
+  "description": "A full-stack MERN employee management system with authentication and leave management",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd crudbackend && npm start",
+    "client": "cd crudfrontend && npm start",
+    "build": "cd crudfrontend && npm run build",
+    "install-server": "cd crudbackend && npm install",
+    "install-client": "cd crudfrontend && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "start": "cd crudbackend && npm start",
+    "heroku-postbuild": "npm run install-all && npm run build"
+  },
+  "keywords": [
+    "employee-management",
+    "mern-stack",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

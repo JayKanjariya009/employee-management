@@ -1,4 +1,4 @@
-import "../add.css";
+// CSS is imported globally in index.js
 import Sidebar from "../Common/Sidebar";
 import axios from "axios";
 import { useState } from "react";

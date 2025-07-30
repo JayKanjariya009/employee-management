@@ -2,6 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/index_clean.css';
+import './styles/utilities.css';
+import './styles/auth.css';
+import './styles/forms.css';
+import './styles/tables.css';
+import './styles/components.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

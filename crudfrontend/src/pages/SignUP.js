@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import "../SignUP.css";
+// CSS is imported globally in index.js
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 // import SignIn from "../pages/SignIn"
 
 
@@ -76,55 +75,66 @@ function SignUP() {
     };
 
     return (
-        <>
-            <div className='navbar'>
-                <div className='container'>
-                    <h4 style={{ cursor: 'pointer' }} onClick={() => navigate('/signup')}>Sign Up</h4>
-                    <h4 style={{ cursor: 'pointer' }} onClick={() => navigate('/signin')}>Login now</h4>
-
-
+        <div className='auth-container'>
+            <div className='auth-card'>
+                <div className='auth-header'>
+                    <div className='auth-logo'>
+                        ✨
+                    </div>
+                    <h1 className='auth-title'>Create Account</h1>
+                    <p className='auth-subtitle'>Join us today and get started</p>
                 </div>
 
-            </div>
-            <div className='signup-container'>
-                <div className='signup-form-box'>
-                    <h1 className='signup-title'>Sign Up Now</h1>
-                    <form onSubmit={handleSubmit} className="signup-form">
-                        <label htmlFor='name'>Name:</label>
+                <form onSubmit={handleSubmit} className="auth-form">
+                    <div className='auth-form-group'>
+                        <label htmlFor='name'>Full Name</label>
                         <input
                             type="text"
                             id='name'
                             name='name'
                             value={formData.name}
                             onChange={handleChange}
+                            placeholder="Enter your full name"
                             required
                         />
+                    </div>
 
-                        <label htmlFor='email'>Email:</label>
+                    <div className='auth-form-group'>
+                        <label htmlFor='email'>Email Address</label>
                         <input
-                            type="text"
+                            type="email"
                             id='email'
                             name='email'
                             value={formData.email}
                             onChange={handleChange}
+                            placeholder="Enter your email"
                             required
                         />
+                    </div>
 
-                        <label htmlFor='password'>Password:</label>
+                    <div className='auth-form-group'>
+                        <label htmlFor='password'>Password</label>
                         <input
                             type="password"
                             id='password'
                             name='password'
                             value={formData.password}
                             onChange={handleChange}
+                            placeholder="Create a strong password"
                             required
                         />
+                    </div>
 
-                        <button type='submit' >Create Account</button>
-                    </form>
+                    <button type='submit' className='auth-btn'>
+                        Create Account
+                    </button>
+                </form>
+
+                <div className='auth-links'>
+                    <p>Already have an account? <span className='auth-link' onClick={() => navigate('/signin')}>Sign in here</span></p>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

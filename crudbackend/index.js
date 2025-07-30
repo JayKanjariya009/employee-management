@@ -2,6 +2,7 @@ const { authMiddleware } = require('./middleware/authmiddleware');
 const { adminMiddleware } = require('./middleware/adminMiddleware');
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { connectDb } = require('./db/connectDb');
 
 const { addEmployee } = require('./apis/addEmployee');
@@ -44,5 +45,14 @@ app.get('/admin', authMiddleware, adminMiddleware, (req, res) => {
 
 // Leave routes
 app.use('/leave', leaveRoute);
+
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../crudfrontend/build')));
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../crudfrontend/build', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));

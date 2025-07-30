@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import Sidebar from '../Common/Sidebar';
-import '../css/ManageLeaves.css';
+// CSS is imported globally in index.js
 
 function ManageLeaves() {
   const [leaves, setLeaves] = useState([]);

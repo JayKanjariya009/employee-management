@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import "../SignIn.css"
+// CSS is imported globally in index.js
 
 function SignIn() {
     const navigate = useNavigate()
@@ -62,43 +62,58 @@ function SignIn() {
     }
 
     return (
-        <>
-            <div className='navbar'>
-                <div className='container'>
-                    <h4 style={{ cursor: 'pointer' }} onClick={() => navigate('/signup')}>Sign Up</h4>
-                    <h4 style={{ cursor: 'pointer' }} onClick={() => navigate('/signin')}>Login now</h4>
+        <div className='auth-container'>
+            <div className='auth-card'>
+                <div className='auth-header'>
+                    <div className='auth-logo'>
+                        👤
+                    </div>
+                    <h1 className='auth-title'>Welcome Back</h1>
+                    <p className='auth-subtitle'>Sign in to your account</p>
                 </div>
-            </div>
 
-            <div className='signin-container'>
-                <div className='signin-form-box'>
-                    <h1 className='signin-title'>Log In</h1>
-                    <form onSubmit={handleSubmit} className="signin-form">
-                        <label htmlFor='email'>Email:</label>
+                <form onSubmit={handleSubmit} className="auth-form">
+                    <div className='auth-form-group'>
+                        <label htmlFor='email'>Email Address</label>
                         <input
-                            type="text"
+                            type="email"
                             id='email'
                             name='email'
                             value={formData.email}
                             onChange={handleChange}
+                            placeholder="Enter your email"
                             required
                         />
+                    </div>
 
-                        <label htmlFor='password'>Password:</label>
+                    <div className='auth-form-group'>
+                        <label htmlFor='password'>Password</label>
                         <input
                             type="password"
                             id='password'
                             name='password'
                             value={formData.password}
                             onChange={handleChange}
+                            placeholder="Enter your password"
                             required
                         />
+                    </div>
 
-                        <button type='submit'>Login</button>
-                    </form>
+                    <div className='remember-me'>
+                        <input type="checkbox" id="remember" className='remember-checkbox' />
+                        <label htmlFor="remember" className='remember-label'>Remember me</label>
+                    </div>
+
+                    <button type='submit' className='auth-btn'>
+                        Sign In
+                    </button>
+                </form>
+
+                <div className='auth-links'>
+                    <p>Don't have an account? <span className='auth-link' onClick={() => navigate('/signup')}>Sign up here</span></p>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

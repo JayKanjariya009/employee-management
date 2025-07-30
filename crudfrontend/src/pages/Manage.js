@@ -1,4 +1,4 @@
-import "../manage.css";
+// CSS is imported globally in index.js
 import Sidebar from "../Common/Sidebar";
 import { Link } from "react-router-dom";
 // import "../connectDb"
@@ -79,31 +79,58 @@ function Manage() {
           <Sidebar />
           {/* Main Content */}
           <div className="content">
-            <h2 className="mb-4">Manage Employees</h2>
-            {employee.map((emp) => (
-
-              <div className="card mb-3" key={emp._id}>
-                <div className="card-body">
-                  <h5 className="card-title">{emp.fullName}</h5>
-                  <p className="card-text">
-                    {emp.email}
-                    <br />
-                    {emp.position}
-                  </p>
-                </div>
-                <div className="action-buttons p-3 ml-auto">
-                  <Link to={`/edit/${emp._id}`} className="btn btn-sm btn-warning">
-                    Edit
-                  </Link>
-                  <button
-                    className="btn btn-sm btn-danger"
-                    onClick={() => deleteEmployee(emp.email)}
-                  >
-                    Delete
-                  </button>
-                </div>
+            <div className="form-container">
+              <h2>Manage Employees</h2>
+              <div className="employees-grid">
+                {employee.map((emp) => (
+                  <div className="employee-card card" key={emp._id}>
+                    <div className="card-body">
+                      <div className="employee-header">
+                        <div className="employee-avatar">
+                          {emp.fullName.charAt(0).toUpperCase()}
+                        </div>
+                        <div className="employee-info">
+                          <h3>{emp.fullName}</h3>
+                          <p>{emp.position}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="employee-details">
+                        <div className="detail-item">
+                          <span className="detail-label">Email</span>
+                          <span className="detail-value">{emp.email}</span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">Department</span>
+                          <span className="detail-value">{emp.department || 'N/A'}</span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">Phone</span>
+                          <span className="detail-value">{emp.phone || 'N/A'}</span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">Join Date</span>
+                          <span className="detail-value">{emp.doj ? new Date(emp.doj).toLocaleDateString() : 'N/A'}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="employee-actions">
+                        <Link to={`/edit/${emp._id}`} className="action-btn edit" title="Edit Employee">
+                          ✏️
+                        </Link>
+                        <button
+                          className="action-btn delete"
+                          onClick={() => deleteEmployee(emp.email)}
+                          title="Delete Employee"
+                        >
+                          🗑️
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

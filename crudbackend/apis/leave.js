@@ -36,7 +36,7 @@ router.post('/', authMiddleware, async (req, res) => {
     }
 });
 
-// 🟡 Get User's Own Leave Requests
+//  Get User's Own Leave Requests
 router.get('/myleaves', authMiddleware, async (req, res) => {
     try {
         const db = await connectDb();
@@ -49,7 +49,7 @@ router.get('/myleaves', authMiddleware, async (req, res) => {
     }
 });
 
-// 🟠 Admin: Get all leave requests
+//  Admin: Get all leave requests
 router.get('/admin', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const db = await connectDb();
@@ -62,8 +62,8 @@ router.get('/admin', authMiddleware, adminMiddleware, async (req, res) => {
     }
 });
 
-// ✅ ✅ ✅ PLACE THIS BEFORE `/:id` route
-// 🟢 Admin: Bulk Update Leave Status
+//  PLACE THIS BEFORE `/:id` route
+//  Admin: Bulk Update Leave Status
 router.patch('/bulk-update', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const db = await connectDb();
@@ -95,7 +95,7 @@ router.patch('/bulk-update', authMiddleware, adminMiddleware, async (req, res) =
     }
 });
 
-// 🟢 Admin: Update Leave Status (Single)
+//  Admin: Update Leave Status (Single)
 router.patch('/:id', authMiddleware, adminMiddleware, async (req, res) => {
     try {
         const db = await connectDb();
