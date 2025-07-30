@@ -24,7 +24,14 @@
 **Files Fixed**:
 - `crudbackend/index.js`: Added `require('dotenv').config();` at the top
 
-### 4. **Static File Serving for Production** ✅ ALREADY CONFIGURED
+### 4. **Express.js Version Compatibility** ✅ FIXED
+**Problem**: Using Express v5.1.0 (beta) which has breaking changes and path-to-regexp issues.
+
+**Files Fixed**:
+- `crudbackend/package.json`: Downgraded `express` from `^5.1.0` to `^4.18.2`
+- Added Node.js version constraints: `"node": ">=16.0.0 <=20.x"`
+
+### 5. **Static File Serving for Production** ✅ ALREADY CONFIGURED
 **Status**: Already configured to serve React build files in production.
 
 ## 🚀 Deployment Instructions (Updated)
