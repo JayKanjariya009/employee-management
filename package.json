@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd crudbackend && npm start",
+    "server": "cd crudbackend && npm run dev",
     "client": "cd crudfrontend && npm start",
     "build": "cd crudfrontend && npm run build",
     "install-server": "cd crudbackend && npm install",

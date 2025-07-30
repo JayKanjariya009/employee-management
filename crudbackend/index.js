@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { authMiddleware } = require('./middleware/authmiddleware');
 const { adminMiddleware } = require('./middleware/adminMiddleware');
 const express = require('express');
