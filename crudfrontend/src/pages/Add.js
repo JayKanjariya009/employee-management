@@ -3,6 +3,7 @@ import Sidebar from "../Common/Sidebar";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from 'react-toastify'
+import API_BASE_URL from '../config/api';
 
 
 function Add() {
@@ -46,7 +47,7 @@ function Add() {
     const token = localStorage.getItem("token");
     console.log("ADD COMPONENT Token from localStorage:", token);
     try {
-      const response = await axios.post('http://localhost:8000/addEmployee', formData, {
+      const response = await axios.post(`${API_BASE_URL}/addEmployee`, formData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

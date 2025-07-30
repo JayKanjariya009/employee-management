@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../Common/Sidebar";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_BASE_URL from '../config/api';
 
 function Edit() {
   const { id } = useParams();
@@ -34,7 +35,7 @@ function Edit() {
         return
       }
       try {
-        const res = await axios.get(`http://localhost:8000/employee/${id}`, {
+        const res = await axios.get(`${API_BASE_URL}/employee/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -72,7 +73,7 @@ function Edit() {
       const token = localStorage.getItem("token");
       console.log("MANAGE COMPONENT Token from localStorage:", token);
 
-      const response = await axios.put(`http://localhost:8000/editemployee/${id}`, formData, {
+      const response = await axios.put(`${API_BASE_URL}/editemployee/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

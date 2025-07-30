@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import Sidebar from '../Common/Sidebar'
+import API_BASE_URL from '../config/api';
 // CSS is imported globally in index.js
 
 function LeaveRequest() {
@@ -15,7 +16,7 @@ function LeaveRequest() {
         e.preventDefault()
         try {
             const token = localStorage.getItem('token')
-            await axios.post(`http://localhost:8000/leave`, form, {
+            await axios.post(`${API_BASE_URL}/leave`, form, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

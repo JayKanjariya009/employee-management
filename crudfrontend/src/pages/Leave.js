@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // CSS is imported globally in index.js
 import Sidebar from '../Common/Sidebar';
+import API_BASE_URL from '../config/api';
 
 function Leave() {
   const [leaves, setLeaves] = useState([]);
@@ -12,7 +13,7 @@ function Leave() {
     const fetchLeaves = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:8000/leave/myleaves', {
+        const res = await axios.get(`${API_BASE_URL}/leave/myleaves`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import Sidebar from '../Common/Sidebar';
+import API_BASE_URL from '../config/api';
 // CSS is imported globally in index.js
 
 function ManageLeaves() {
@@ -14,7 +15,7 @@ function ManageLeaves() {
   const fetchLeaves = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:8000/leave/admin', {
+      const res = await axios.get(`${API_BASE_URL}/leave/admin`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLeaves(res.data.leaves || []);
@@ -38,7 +39,7 @@ function ManageLeaves() {
   const updateStatus = async (id, status) => {
     setLoading(true);
     try {
-      await axios.patch(`http://localhost:8000/leave/${id}`, { status }, {
+      await axios.patch(`${API_BASE_URL}/leave/${id}`, { status }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success(`Leave ${status}`);
@@ -53,7 +54,7 @@ function ManageLeaves() {
     if (selectedLeaves.length === 0) return;
     setLoading(true);
     try {
-      await axios.patch('http://localhost:8000/leave/bulk-update', {
+      await axios.patch(`${API_BASE_URL}/leave/bulk-update`, {
         ids: selectedLeaves,
         status
       }, {

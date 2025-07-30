@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import API_BASE_URL from '../config/api';
 // import SignIn from "../pages/SignIn"
 
 
@@ -53,7 +54,7 @@ function SignUP() {
         console.log('Form submitted:', formData);
 
         try {
-            const res = await axios.post('http://localhost:8000/signup', formData);
+            const res = await axios.post(`${API_BASE_URL}/signup`, formData);
             toast.success(res.data.message); // success message
             setFormData({
                 name: "",

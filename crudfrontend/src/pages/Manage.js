@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_BASE_URL from '../config/api';
 
 function Manage() {
   
@@ -18,7 +19,7 @@ function Manage() {
     console.log("MANAGE COMPONENT Token from localStorage:", token);
 
     try {
-      const response = await axios.get('http://localhost:8000/employees', {
+      const response = await axios.get(`${API_BASE_URL}/employees`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -53,7 +54,7 @@ function Manage() {
     console.log("MANAGE COMPONENT Token from localStorage:", token);
 
     try {
-      const res = await axios.delete(`http://localhost:8000/deleteemployee/${email}`,{
+      const res = await axios.delete(`${API_BASE_URL}/deleteemployee/${email}`,{
          headers: {
           Authorization: `Bearer ${token}`
         }

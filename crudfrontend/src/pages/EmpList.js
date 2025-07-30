@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Sidebar from "../Common/Sidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_BASE_URL from '../config/api';
 
 // CSS is imported globally in index.js 
 
@@ -29,7 +30,7 @@ function EmpList() {
       }
 
       try {
-        const response = await axios.get("http://localhost:8000/employees", {
+        const response = await axios.get(`${API_BASE_URL}/employees`, {
           headers: {
             Authorization: `Bearer ${token}`
           },

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import API_BASE_URL from '../config/api';
 // CSS is imported globally in index.js
 
 function SignIn() {
@@ -25,7 +26,7 @@ function SignIn() {
         console.log("form data submitted", formData);
 
         try {
-            const response = await axios.post('http://localhost:8000/signin', formData)
+            const response = await axios.post(`${API_BASE_URL}/signin`, formData)
 
             toast.success(response.data.message || "Signed in successfully");
 
